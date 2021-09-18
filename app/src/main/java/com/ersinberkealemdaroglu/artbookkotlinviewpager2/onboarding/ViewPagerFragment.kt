@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ersinberkealemdaroglu.artbookkotlinviewpager2.R
-import com.ersinberkealemdaroglu.artbookkotlinviewpager2.onboarding.screens.FirstScreen
-import com.ersinberkealemdaroglu.artbookkotlinviewpager2.onboarding.screens.ThirdScreen
-import com.ersinberkealemdaroglu.artbookkotlinviewpager2.onboarding.screens.SecondScreen
-import com.ersinberkealemdaroglu.artbookkotlinviewpager2.onboarding.screens.FinishedScreen
+import com.ersinberkealemdaroglu.artbookkotlinviewpager2.onboarding.screens.*
 import kotlinx.android.synthetic.main.fragment_view_pager.*
 import kotlinx.android.synthetic.main.fragment_view_pager.view.*
 
@@ -33,6 +30,7 @@ class ViewPagerFragment : Fragment() {
             FirstScreen(),
             SecondScreen(),
             ThirdScreen(),
+            FoursScreenFragment(),
             FinishedScreen()
         )
 

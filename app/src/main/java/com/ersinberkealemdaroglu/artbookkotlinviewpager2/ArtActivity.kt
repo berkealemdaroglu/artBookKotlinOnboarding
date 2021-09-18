@@ -141,23 +141,20 @@ class ArtActivity : AppCompatActivity() {
 
     }
 
-    private fun makeSmallerBitmap(image : Bitmap, maximumSize : Int) : Bitmap{
+    fun makeSmallerBitmap(image: Bitmap, maximumSize : Int) : Bitmap {
         var width = image.width
         var height = image.height
 
         val bitmapRatio : Double = width.toDouble() / height.toDouble()
-        if (bitmapRatio > 1){
-            //landspace
+        if (bitmapRatio > 1) {
             width = maximumSize
-            val scaleHeight = width / bitmapRatio
-            height = scaleHeight.toInt()
-        }else{
-            //portrait
+            val scaledHeight = width / bitmapRatio
+            height = scaledHeight.toInt()
+        } else {
             height = maximumSize
-            val scaleWidth = width / bitmapRatio
-            width = scaleWidth.toInt()
+            val scaledWidth = height * bitmapRatio
+            width = scaledWidth.toInt()
         }
-
         return Bitmap.createScaledBitmap(image,width,height,true)
     }
 

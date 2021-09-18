@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.ersinberkealemdaroglu.artbookkotlinviewpager2.MainActivity
 import com.ersinberkealemdaroglu.artbookkotlinviewpager2.R
-import com.ersinberkealemdaroglu.artbookkotlinviewpager2.databinding.FragmentThirdScreenBinding
 import kotlinx.android.synthetic.main.fragment_third_screen.view.*
 
 

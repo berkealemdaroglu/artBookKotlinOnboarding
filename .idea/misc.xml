@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/activity_art.xml" value="0.25" />
+        <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/activity_art.xml" value="0.23975409836065573" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/activity_splash.xml" value="0.2069078947368421" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_first_screen.xml" value="0.22" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_four_screen.xml" value="0.20723684210526316" />
+        <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_four_screen2.xml" value="0.35" />
+        <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_fours_screen.xml" value="0.35" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_second_screen.xml" value="0.14" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="..\:/Users/ersin/AndroidStudioKotlinProject/ArtBookKotlinViewPager2/app/src/main/res/layout/fragment_third_screen.xml" value="0.2069078947368421" />
