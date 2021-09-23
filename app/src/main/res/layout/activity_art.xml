@@ -6,55 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ArtActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="335dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="44dp"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        android:onClick="selectImage"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/artNameText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/click_default" />
-
-    <EditText
-        android:id="@+id/artNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="106dp"
-        android:ems="10"
-        android:hint="Enter a Art Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <EditText
-        android:id="@+id/artistNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="106dp"
-        android:ems="10"
-        android:hint="Enter a Artist Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artNameText" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -63,24 +14,69 @@
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yearArtText"
-        app:layout_constraintVertical_bias="0.387" />
+        app:layout_constraintTop_toBottomOf="@+id/yearArtText" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:onClick="delete"
+        android:text="delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/yearArtText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="4dp"
         android:ems="10"
         android:hint="Enter a Art Year"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/artistNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Enter a Artist Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/yearArtText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="335dp"
+        android:layout_height="382dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:onClick="selectImage"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/artNameText"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artistNameText" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222"
+        app:srcCompat="@drawable/click_default" />
+
+    <EditText
+        android:id="@+id/artNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Enter a Art Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/artistNameText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

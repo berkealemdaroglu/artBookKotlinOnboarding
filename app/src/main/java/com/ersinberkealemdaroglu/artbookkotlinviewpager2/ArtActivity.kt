@@ -2,6 +2,7 @@ package com.ersinberkealemdaroglu.artbookkotlinviewpager2
 
 import android.Manifest
 import android.content.ContentValues.TAG
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.sqlite.SQLiteDatabase
@@ -11,6 +12,7 @@ import android.graphics.ImageDecoder
 import android.net.Uri
 import android.nfc.Tag
 import android.opengl.Visibility
+import android.os.Binder
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,6 +33,7 @@ import java.io.ByteArrayOutputStream
 import android.widget.LinearLayout
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import java.security.KeyStore
 
@@ -56,13 +59,15 @@ class ArtActivity : AppCompatActivity() {
 
         val intent = intent
         val infos = intent.getStringExtra("infos")
-
+        binding.deleteButton.visibility = View.INVISIBLE
         if (infos.equals("newArt")){
             binding.artNameText.setText("")
             binding.artistNameText.setText("")
             binding.yearArtText.setText("")
             binding.imageView.setImageResource(R.drawable.click_default)
             binding.button2.visibility = View.VISIBLE
+            binding.deleteButton.visibility = View.INVISIBLE
+            binding.imageView.adjustViewBounds = false
         }else{
             val selectedId = intent.getIntExtra("id",2)
             val cursor = database.rawQuery("SELECT * FROM arts WHERE id = ?", arrayOf(selectedId.toString()))
@@ -80,6 +85,7 @@ class ArtActivity : AppCompatActivity() {
                 binding.artistNameText.isEnabled = false
                 binding.yearArtText.isEnabled = false
                 binding.button2.visibility =  View.INVISIBLE
+                binding.deleteButton.visibility = View.VISIBLE
 
                 val byteArray = cursor.getBlob(imageIndex)
                 val bitmap = BitmapFactory.decodeByteArray(byteArray,0,byteArray.size)
@@ -96,6 +102,11 @@ class ArtActivity : AppCompatActivity() {
                             LinearLayout.LayoutParams.MATCH_PARENT
                         )
                     )
+                    binding.deleteButton.visibility = View.INVISIBLE
+                    binding.artistNameText.visibility = View.INVISIBLE
+                    binding.yearArtText.visibility = View.INVISIBLE
+                    binding.artNameText.visibility = View.INVISIBLE
+
                     binding.imageView.adjustViewBounds = true
                     val intents = intent
                     intents.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -108,6 +119,30 @@ class ArtActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun delete(view: View){
+        val intent = intent
+        val infos = intent.getStringExtra("infos")
+        val selectedIDNew = intent.getIntExtra("id",1)
+
+
+        val alertdialog = AlertDialog.Builder(this@ArtActivity)
+        alertdialog.setTitle("Are You Sure?")
+        alertdialog.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+            if (infos.equals("old")){
+
+                database.execSQL("DELETE FROM arts WHERE id = ?", arrayOf(selectedIDNew.toString()))
+            }
+            val intent = Intent(this@ArtActivity,MainActivity::class.java)
+            Toast.makeText(this,"The Transaction Was Successful",Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+            finish()
+        })
+        alertdialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->
+            Toast.makeText(this,"Not Deleted", Toast.LENGTH_SHORT).show()
+        })
+        alertdialog.show()
     }
 
     fun save(view : View){

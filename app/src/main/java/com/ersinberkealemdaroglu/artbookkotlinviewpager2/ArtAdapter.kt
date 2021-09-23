@@ -20,6 +20,7 @@ class ArtAdapter (val artList : ArrayList<ArtManager>) : RecyclerView.Adapter<Ar
 
     override fun onBindViewHolder(holder: ArtHolderAdapter, position: Int) {
         holder.binding.receylerRowTextView.text = artList.get(position).artnames
+
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context,ArtActivity::class.java)
             intent.putExtra("infos","old")

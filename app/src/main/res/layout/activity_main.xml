@@ -6,14 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/nullReceylerViewImage"
+        android:layout_width="327dp"
+        android:layout_height="481dp"
+        android:layout_marginTop="48dp"
+        android:onClick="goArtActivity"
+        app:layout_constraintBottom_toTopOf="@+id/nullReceylerViewText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/receylerView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/click_default" />
+
+    <TextView
+        android:id="@+id/nullReceylerViewText"
+        android:layout_width="378dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="116dp"
+        android:gravity="center"
+        android:text="Click to Add Art Book."
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/receylerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

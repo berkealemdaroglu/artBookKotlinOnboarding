@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ersinberkealemdaroglu.artbookkotlinviewpager2.databinding.ActivityMainBinding
 
@@ -18,11 +19,16 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         artList = ArrayList()
         artAdapter = ArtAdapter(artList)
 
         binding.receylerView.layoutManager = LinearLayoutManager(this)
         binding.receylerView.adapter = artAdapter
+
+        binding.nullReceylerViewImage.visibility = View.INVISIBLE
+        binding.nullReceylerViewText.visibility = View.INVISIBLE
+        binding.receylerView.visibility = View.VISIBLE
 
 
         try {
@@ -36,16 +42,35 @@ class MainActivity : AppCompatActivity() {
                 val name = cursor.getString(artNameIndex)
                 var id = cursor.getInt(artIdIndex)
                 val artManager = ArtManager(name,id)
+
                 artList.add(artManager)
+
+
             }
 
             artAdapter.notifyDataSetChanged()
             cursor.close()
+            if (artAdapter.itemCount.equals(0)){
+                binding.nullReceylerViewText.visibility = View.VISIBLE
+                binding.nullReceylerViewImage.visibility = View.VISIBLE
+                binding.receylerView.visibility = View.INVISIBLE
+
+
+            }
+
+
 
         }catch (e:Exception){
             e.printStackTrace()
         }
 
+    }
+
+    fun goArtActivity(view: View){
+        val intent = Intent(this,ArtActivity::class.java)
+        intent.putExtra("infos","newArt")
+        startActivity(intent)
+        finish()
     }
 
 
